@@ -1,7 +1,7 @@
 // JavaScript Document
 // 基于准备好的dom，初始化echarts实例
 var myChart = echarts.init(document.getElementById('main'));
-
+var gaugeChart = echarts.init(document.getElementById('main_gauge'));
 var base = new Date(2018,1,1);
 var oneDay = 24 * 3600 * 1000;
 var date = [];
@@ -60,6 +60,28 @@ option = {
         }
     ]
 };
+gaugeoption = {
+    tooltip : {
+        formatter: "{a} <br/>{b} : {c}%"
+    },
+    toolbox: {
+        feature: {
+            restore: {},
+            saveAsImage: {}
+        }
+    },
+    series: [
+        {
+            name: '燃气浓度',
+            type: 'gauge',
+			min: 0,
+            max: 1,
+            detail: {formatter:'{value}'},
+            data: [{value: 0, name: '浓度'}]
+        }
+    ]
+};
+
 window.onresize = myChart.resize;
 //setInterval(function(){alert(1)},1000);
 setInterval(function () {
@@ -74,6 +96,7 @@ setInterval(function () {
             data: data
         }]
     });*/
-}, 100);
+	gaugeoption.series[0].data[0].value = (Math.random()*0.15).toFixed(2) - 0;
+    gaugeChart.setOption(gaugeoption, true);
+}, 2000	);
 
-fun

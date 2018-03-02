@@ -114,22 +114,21 @@
                   <div class="col-md-6">
                     <div class="panel panel-default">
                       <div class="panel-heading">
-                        <h3 class="panel-title"><i class="fa fa-bullhorn"></i>通知公告</h3>
+                        <h3 class="panel-title"><i class="fa fa-bullhorn"></i>实时燃气检测</h3>
                       </div>
                       <ul class="list-group news-list">
-                        <li class="list-group-item"><span class="time">10/30 12:30</span><a href="#">您的站点已经创建成功！</a></li>
-                        <li class="list-group-item"><a href="#">您的站点已经创建成功！</a></li>
-                         <li class="list-group-item"><div id="main" style="width: 98%;height:400px;"></div>a</li>
+                      	<li class="list-group-item"><div id="main_gauge" style="height:400px;"></div></li>
+                         <li class="list-group-item" id="messagetime"><!--<span class="time" id="messagetime"></span>--></li>
                       </ul>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="panel panel-default">
                       <div class="panel-heading">
-                        <h3 class="panel-title"><i class="fa fa-glass"></i>服务市场</h3>
+                        <h3 class="panel-title"><i class="fa fa-glass"></i></h3>
                       </div>
                       <ul class="list-group news-list">
-                        <li class="list-group-item"><span class="time">10/30 12:30</span><a href="#">还是这些，通知消息！</a></li>
+                        <li class="list-group-item"><div id="main" style="height:400px;"></div></li>
                       </ul>
                     </div>
                   </div>
@@ -173,32 +172,32 @@
                     </div>
                   </div>
                 </div>-->
-                <!--<div class="row number-box">
+                <div class="row number-box">
                   <div class="col-sm-6 col-md-3">
                     <div class="s-box"> <i class="bigicon fa fa-eye"></i>
                       <h5>今日访客</h5>
-                      <div class="number"><b>78</b><span>人次</span></div>
+                      <div class="number"><b>3</b><span>人次</span></div>
                       <a href="#" class="s-foot bg-primary">查看详情<i class="fa fa-arrow-circle-right pull-right"></i></a> </div>
                   </div>
                   <div class="col-sm-6 col-md-3">
                     <div class="s-box"> <i class="bigicon fa fa-weixin"></i>
-                      <h5>微信历史流量</h5>
-                      <div class="number"><b>598</b><span>人次</span></div>
+                      <h5>当月流量</h5>
+                      <div class="number"><b>43</b><span>人次</span></div>
                       <a href="#" class="s-foot bg-warning">查看详情<i class="fa fa-arrow-circle-right pull-right"></i></a> </div>
                   </div>
                   <div class="col-sm-6 col-md-3">
                     <div class="s-box"> <i class="bigicon fa fa-paw"></i>
-                      <h5>百度搜索流量</h5>
-                      <div class="number"><b>398</b><span>人次</span></div>
+                      <h5>历史流量</h5>
+                      <div class="number"><b>87</b><span>人次</span></div>
                       <a href="#" class="s-foot bg-info">查看详情<i class="fa fa-arrow-circle-right pull-right"></i></a> </div>
                   </div>
                   <div class="col-sm-6 col-md-3">
                     <div class="s-box"> <i class="bigicon fa fa-th"></i>
                       <h5>其它途径流量</h5>
-                      <div class="number"><b>189</b><span>人次</span></div>
+                      <div class="number"><b>2</b><span>人次</span></div>
                       <a href="#" class="s-foot bg-danger">查看详情<i class="fa fa-arrow-circle-right pull-right"></i></a> </div>
                   </div>
-                </div>-->
+                </div>
               </div>
             </section>
           </section>
@@ -213,6 +212,13 @@
 <!-- App --> 
 <script src="js/app.js"></script> 
 <script src="js/echarts.js"></script>
-<script src="js/detection.js"></script> 
+<script src="js/index/index.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var date=new Date();
+	var messagetime=date.toLocaleString();
+    $("#messagetime").append("<span class='time'>"+messagetime+"</span><a href='#'>您的厨房未检测到过高的燃气浓度！</a>");
+});
+</script>
 </body>
 </html>

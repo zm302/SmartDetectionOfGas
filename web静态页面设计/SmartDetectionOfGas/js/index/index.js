@@ -82,7 +82,10 @@ gaugeoption = {
     ]
 };
 
-window.onresize = myChart.resize;
+window.onresize = function(){
+	myChart.resize();
+	gaugeoption.resize();
+	};
 //setInterval(function(){alert(1)},1000);
 setInterval(function () {
     addData(true);
